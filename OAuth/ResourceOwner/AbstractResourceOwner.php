@@ -98,7 +98,7 @@ abstract class AbstractResourceOwner implements ResourceOwnerInterface
         unset($options['options']);
 
         // Resolve merged options
-        $resolver = new OptionsResolver();
+        $resolver = new OptionsResolverInterface();
         $this->configureOptions($resolver);
         $options = $resolver->resolve($options);
         $this->options = $options;

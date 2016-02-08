@@ -25,6 +25,11 @@ use Symfony\Component\Templating\Helper\Helper;
 class OAuthHelper extends Helper
 {
     /**
+     * @var Request
+     */
+    private $request;
+    
+    /**
      * @var RequestStack
      */
     private $requestStack;
@@ -42,7 +47,15 @@ class OAuthHelper extends Helper
         $this->oauthUtils = $oauthUtils;
         $this->requestStack = $requestStack;
     }
-
+    
+    /**
+     * @param null|Request $request
+     */
+    public function setRequest(Request $request = null)
+    {
+        $this->request = $request;
+    }
+    
     /**
      * @return array
      */
